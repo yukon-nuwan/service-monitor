@@ -1,0 +1,73 @@
+#menuNav{
+	margin-bottom: 15px;
+}
+
+
+.commonDivMargin{
+	margin-bottom: 15px;
+}
+
+.commonMarginRight{
+	margin-right: 10px;
+}
+
+.commonCard{
+	width:250px;
+	max-width: 250px;
+	margin-bottom: 25px;
+}
+
+.btn-gap-yukon{
+	margin-right: 10px;
+}
+
+
+/*--thank you pop starts here--*/
+.info-pop{
+	width:100%;
+ 	padding:20px;
+	text-align:center;
+}
+.info-pop img{
+	width:76px;
+	height:auto;
+	margin:0 auto;
+	display:block;
+	margin-bottom:25px;
+}
+
+.info-pop h1{
+	font-size: 25px;
+    margin-bottom: 25px;
+	color:#5C5C5C;
+}
+.info-pop p{
+	font-size: 20px;
+    margin-bottom: 27px;
+ 	color:#5C5C5C;
+}
+
+.info-pop a{
+	display: inline-block;
+    margin: 0 auto;
+    padding: 9px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    background-color: #8BC34A;
+    border-radius: 17px;
+}
+
+.info-pop a i{
+	margin-right:5px;
+	color:#fff;
+}
+
+#infoModal .modal-header{
+    border:0px;
+}
+
+#infoDialog{
+	max-width: 300px;
+}
+/*--thank you pop ends here--*/

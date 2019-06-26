@@ -1,0 +1,17 @@
+
+#callerDiv{
+	margin-bottom: 15px;
+}
+
+.selectRow {
+    display : block;
+    padding : 20px;
+}
+.select2-container {
+    min-width: 300px;
+    min-height: 20px;
+}
+
+.select2-drop-active{
+    margin-top: -25px;
+}
