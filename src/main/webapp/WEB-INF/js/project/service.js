@@ -1,55 +1,40 @@
 
+    /**
+	 * Validate
+	 * @returns
+	 */
+	function validate(){
+	
+		var valid = false;
+		
+		var host = $("#host").val();
+	    var port = $("#port").val()
+	    
+	    if(host != null && host != "" && port != null && port != ""){
+	    	valid = true;
+	    }
+	    
+	    return valid;
+	    
+	}
 
 	/**
 	 * Save Service
 	 * @returns
 	 */
 	function saveService(){
-		var formData = getDivInputsJSON("serviceDiv");
 		
-		
-		
-		 $.ajax({
-		        url: "/api/service/",
-		        type: 'POST',
-		        dataType: 'json',
-		        data: JSON.stringify(formData),
-		        contentType: 'application/json',
-		        mimeType: 'application/json',
-		        success: function (data) {
-		        	var serviceArr = [];
-		    		serviceArr [0] = data.result;
-		    		drawTable(serviceArr);
-		        	clearAllInputs("divService");
-		        	showMessageSuccess();
-		        },
-		        error: function (data, status, er) {
-		        	console.log("Error");
-		        }
-		    });
-	}
-	
-	/**
-	 * Update Service
-	 * @returns
-	 */
-	function updateService(){
-		var id = $("#id").val();
-		if(id != null && id > 0){
-		var formData = getDivInputsJSON("serviceDiv");
+		if(validate()){
+			var formData = getDivInputsJSON("serviceDiv");
 			 $.ajax({
-			        url: "/api/service/"+id,
-			        type: 'PUT',
+			        url: "/api/service/",
+			        type: 'POST',
 			        dataType: 'json',
 			        data: JSON.stringify(formData),
 			        contentType: 'application/json',
 			        mimeType: 'application/json',
 			        success: function (data) {
-			        	$('#save').attr("disabled", false);	
-			        	$('#update').attr("disabled", true);	
-			    		$('#delete').attr("disabled", true);	
-			    		
-			    		var serviceArr = [];
+			        	var serviceArr = [];
 			    		serviceArr [0] = data.result;
 			    		drawTable(serviceArr);
 			        	clearAllInputs("divService");
@@ -59,6 +44,46 @@
 			        	console.log("Error");
 			        }
 			    });
+		}else{
+			alert("Host and Port is required")
+		}
+	}
+	
+	/**
+	 * Update Service
+	 * @returns
+	 */
+	function updateService(){
+		
+		if(validate()){
+			var id = $("#id").val();
+			if(id != null && id > 0){
+			var formData = getDivInputsJSON("serviceDiv");
+				 $.ajax({
+				        url: "/api/service/"+id,
+				        type: 'PUT',
+				        dataType: 'json',
+				        data: JSON.stringify(formData),
+				        contentType: 'application/json',
+				        mimeType: 'application/json',
+				        success: function (data) {
+				        	$('#save').attr("disabled", false);	
+				        	$('#update').attr("disabled", true);	
+				    		$('#delete').attr("disabled", true);	
+				    		
+				    		var serviceArr = [];
+				    		serviceArr [0] = data.result;
+				    		drawTable(serviceArr);
+				        	clearAllInputs("divService");
+				        	showMessageSuccess();
+				        },
+				        error: function (data, status, er) {
+				        	console.log("Error");
+				        }
+				    });
+			}
+		}else{
+			alert("Host and Port is required")
 		}
 	}
 	
