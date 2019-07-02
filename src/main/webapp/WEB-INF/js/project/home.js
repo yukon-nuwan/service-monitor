@@ -26,7 +26,8 @@ function connect() {
  * @returns
  */
 function drawTable(serviceMessageDTO){
-	if($('#'+serviceMessageDTO.serviceId+"_"+serviceMessageDTO.callerId).length <= 0){
+	const checkProperty = $('#'+serviceMessageDTO.serviceId+"_"+serviceMessageDTO.callerId);
+	if(checkProperty.length <= 0){
 		var trClass = "table-danger";
 		if(serviceMessageDTO.isAlive){
 			trClass = "table-success";
